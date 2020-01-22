@@ -14,9 +14,9 @@ CXXFLAGS   := -I../include #e.g., CXXFLAGS=-g -O0 for debugging
 LDFLAGS    := $(shell $(PYLON_ROOT)/bin/pylon-config --libs-rpath)
 
 # uncomment to use prebuilt zxing armhf library
-#LDLIBS     := $(shell $(PYLON_ROOT)/bin/pylon-config --libs) -L../lib/zxing/linux/armhf -L/usr/lib -lzxing -lopencv_core -lopencv_highgui -lopencv_imgproc
+#LDLIBS     := $(shell $(PYLON_ROOT)/bin/pylon-config --libs) -L../lib/zxing/linux/armhf -L/usr/lib -lzxing
 # uncomment to use prebuilt zxing x86 library
-LDLIBS     := $(shell $(PYLON_ROOT)/bin/pylon-config --libs) -L../lib/zxing/linux/x86 -L/usr/lib -lzxing -lopencv_core -lopencv_highgui -lopencv_imgproc
+LDLIBS     := $(shell $(PYLON_ROOT)/bin/pylon-config --libs) -L../lib/zxing/linux/x86 -L/usr/lib -lzxing
 
 # Rules for building
 all: $(NAME)
