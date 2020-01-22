@@ -266,9 +266,12 @@ int main(int argc, char* argv[])
 					pylonImage.AttachGrabResultBuffer(ptrGrabResult);
 				else
 					fc.Convert(pylonImage, ptrGrabResult);
-
+#ifdef PYLON_WIN_BUILD
 				Pylon::DisplayImage(0, pylonImage);
-
+#endif
+				// Todo for Linux:
+				// We can bring back some OpenCV code here to display the image since Pylon::DisplayImage does not support Linux.
+				
 				BarcodeReader myBarcodeReader;
 				BarcodeReader::BRResult myResult;
 
